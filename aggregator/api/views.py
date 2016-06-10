@@ -24,7 +24,12 @@ class UploadView(APIView):
          curl -i -F file=@<path_to_csv_file> -F "format=<csv or json>" \
                <host>/api/v1/upload/
 
-      RequestFields:
+      Request Fields:
+      --------------
+         file:    Path to the file on the client
+         format:  csv or json
+         
+      Response Fields:
       -------------
          status: Indicates whether the file was successfully uploaded
          url:    upload url. Currently a GET on this path is not implemented,
