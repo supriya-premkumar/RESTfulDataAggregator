@@ -14,11 +14,14 @@ Usage Example:
 
 1. Upload File:
 ---------------
-<pre>Request:    curl -i -F file=@<path_to_csv_file> -F "format=<csv or json>" <host>/api/v1/upload/
+<pre>
+     Request:    curl -i -F file=@<path_to_csv_file> -F "format=<csv or json>" <host>/api/v1/upload/
      Response:   {"status":"Accepted",
                   "url":"/upload/666b3b22-f161-11e5-9670-060c1144530b",
-                  "token":"666b3b22-f161-11e5-9670-060c1144530b"}</pre>
-  On successful upload the server returns a token back to the client. The client has to send a token to the server when it wants to perform aggregation
+                  "token":"666b3b22-f161-11e5-9670-060c1144530b"}
+</pre>
+ 
+ On successful upload the server returns a token back to the client. The client has to send a token to the server when it wants to perform aggregation
 
 2. Aggregate File:
 -----------------
@@ -27,6 +30,7 @@ Usage Example:
   Response:  Either csv or json aggregated stream file download.
   </pre>
   The client passes the token, groupOn, AggregateOn parameters and Type to indicate the format it expects the results back in.
+
 <pre>
   Sample File:
   ------------
@@ -52,7 +56,7 @@ Usage Example:
 
 File Description:
 ==================
-All the functionality can be found in: <strong>RESTfulDataAggregator/aggregator/api/views.py<strong>
+All the functionality can be found in: RESTfulDataAggregator/aggregator/api/views.py
 Routing rules are in: RESTfulDataAggregator/aggregator/aggregator/urls.py
 
 Utils:
